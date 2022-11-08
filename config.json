@@ -1,0 +1,26 @@
+{
+    "name": "Beatriz Oliveira",
+    "job": "Desenvolvedora de Software",
+    "github": "trizferoli",
+    "playlists": {
+        "jogos": [
+            {
+                "title": "titulo",
+                "url": "",
+                "thumb": "thumbnail"
+            },
+            {
+                "title": "titulo 2",
+                "url": "",
+                "thumb": "thumbnail"
+            }
+        ],
+        "frontend": [
+            {
+                "title": "titulo",
+                "url": "",
+                "thumb": "thumbnail"
+            }
+        ]
+    }
+}
