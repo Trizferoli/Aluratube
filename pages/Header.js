@@ -15,6 +15,7 @@ img{
     display: flex;
     align-items: center;
     width: 100%;
+    /* background-color: black; */
     padding: 16px 32px;
     gap: 16px;
 }
