@@ -46,34 +46,36 @@ const StyledTimeline = styled.div`
   }
 `;
 
-function Timeline(propriedades) {
-    const playlistNames = Object.keys(propriedades.playlists);
-    return (
-        <>
-            <StyledTimeline>
-                {playlistNames.map((name) => {
-                    const videos = propriedades.playlists[name];
-                    return (
-                        <section>
-                            <h2>{name}</h2>
-                            <div>
-                                {videos.map((video) => {
-                                    return (
-                                        <a href={video.url}>
-                                            <img src={video.thumb} />
-                                            <span>{video.title}</span>
-                                        </a>
-                                    )
-                                }
-                                )}
-                            </div>
-                        </section>
-                    )
+function Timeline({ searchValue, ...propriedade }) {
+  const playlistNames = Object.keys(propriedade.playlists);
+  return (
+    <>
+      <StyledTimeline>
+        {playlistNames.map((name) => {
+          const videos = propriedade.playlists[name];
+          return (
+            <section>
+              <h2>{name}</h2>
+              <div>
+                {videos.filter((video) => {
+                  return video.title.toUpperCase().includes(searchValue.toUpperCase())
+                }).map((video) => {
+                  return (
+                    <a href={video.url}>
+                      <img src={video.thumb} />
+                      <span>{video.title}</span>
+                    </a>
+                  )
+                }
+                )}
+              </div>
+            </section>
+          )
 
-                })}
-            </StyledTimeline>
-        </>
-    )
+        })}
+      </StyledTimeline>
+    </>
+  )
 }
 
 export default Timeline;
